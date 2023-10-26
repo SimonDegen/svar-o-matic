@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="container flex gap-4 p-8">
       <div className="flex flex-col gap-8 w-1/2">
-        <div className="bg-base-200 rounded-lg p-8 shadow-lg">
+        <div className="bg-base-300 rounded-lg p-8 shadow-lg">
           <h1 className="text-3xl mb-4">Dine filer</h1>
           <div className="overflow-x-auto">
             <table className="table">
@@ -102,7 +102,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="bg-base-200 w-1/2 items-center p-8 rounded-lg">
+      <div className="bg-base-300 w-1/2 items-center p-8 rounded-lg">
         Område for forhåndsvisning av filer??
       </div>
     </main>
