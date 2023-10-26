@@ -1,4 +1,16 @@
+"use client";
+
+import { useState, useEffect } from "react";
+
 export default function Home() {
+  const [file, setFile] = useState();
+  useEffect(() => {
+    console.log(file);
+  }, [file]);
+
+  function handleChange(event: any) {
+    setFile(event.target.files[0]);
+  }
   return (
     <main className="container flex gap-4 p-8">
       <div className="flex flex-col gap-8 w-1/2">
@@ -43,7 +55,7 @@ export default function Home() {
                   </th>
                   <td>
                     <div className="flex items-center text-center font-bold pb-1">
-                      Posten fullstack 
+                      Posten fullstack
                     </div>
                   </td>
                   <td>
@@ -98,12 +110,14 @@ export default function Home() {
         <div className="flex  h-32  rounded">
           <input
             type="file"
+            onChange={handleChange}
             className="file-input file-input-bordered w-full max-w-xs"
           />
         </div>
       </div>
-      <div className="bg-base-300 w-1/2 items-center p-8 rounded-lg">
-        Område for forhåndsvisning av filer??
+      <div className="bg-base-300 w-1/2 h-[80vh] items-center p-8 rounded-lg">
+        {!file && <>Last opp fil for å se den he, må være pdf akkurat nå!</>}
+        {file && <iframe className="h-full w-full" src={URL.createObjectURL(file)}></iframe>}
       </div>
     </main>
   );
