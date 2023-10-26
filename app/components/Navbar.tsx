@@ -1,12 +1,48 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import { themeChange } from "theme-change";
 
 const Navbar: React.FC = () => {
+  useEffect(() => {
+    themeChange(false);
+  }, []);
+
+  const themes = [
+    "light",
+    "dark",
+    "cupcake",
+    "bumblebee",
+    "emerald",
+    "corporate",
+    "synthwave",
+    "retro",
+    "cyberpunk",
+    "valentine",
+    "halloween",
+    "garden",
+    "forest",
+    "aqua",
+    "lofi",
+    "pastel",
+    "fantasy",
+    "wireframe",
+    "black",
+    "luxury",
+    "dracula",
+    "cmyk",
+    "autumn",
+    "business",
+    "acid",
+    "lemonade",
+    "night",
+    "coffee",
+    "winter",
+  ];
+
   return (
     <div className="navbar bg-base-200 shadow-md">
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-xl">Svar-O-Matic</a>
-      </div>
-      <div className="flex-none gap-2">
         <div className="form-control">
           <input
             type="text"
@@ -14,6 +50,15 @@ const Navbar: React.FC = () => {
             className="input input-bordered w-24 md:w-auto"
           />
         </div>
+      </div>
+      <div className="flex-none gap-2">
+        <select className="select select-bordered  max-w-xs" data-choose-theme>
+          {themes.map((theme) => (
+            <option key={theme} value={theme}>
+              {theme.toUpperCase()}
+            </option>
+          ))}
+        </select>
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
