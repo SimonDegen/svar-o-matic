@@ -4,7 +4,7 @@ const Navbar: React.FC = () => {
   return (
     <div className="navbar bg-base-200 shadow-md">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <a className="btn btn-ghost normal-case text-xl">Svar-O-Matic</a>
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
